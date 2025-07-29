@@ -1,0 +1,30 @@
+
+#identation
+#  one use spaces
+#  tabs not allowed . Use consistent space : usually 2 spaces per level for nested structire
+
+# key value pair key : value : must be followed by a space and keys are case sensitives
+
+# List or sequences  use a dash + space for each item
+
+# when working with scalars (string, numbers, booleans)
+# no quotes needed for simple string , number and booleans
+#  quotes are needed when containing special characters (:,$,#,@)
+# boolean : true or false (lowercase)
+
+app:
+  name: "Yml testing"
+  greeting: "good noon class"
+
+server:
+  port: 8082
+
+#' ---to separate or start a YAML document .
+# ... optionally to end one
+#
+#items:
+#  -one
+#  -two
+#items1 : [one,two]'
+
+# YAML supports JSON inline objects {...} and arrays[...]

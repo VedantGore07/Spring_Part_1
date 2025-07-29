@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- property tag we use to pass value in setter -->
+    <bean id="emp" class="com.infosys.beans.Employee">
+        <property name="empName" value="virat" />
+        <property name="empId" value="1" />
+    </bean>
+    
+    <bean id="emp1" class="com.infosys.beans.Employee">
+        <property name="empName" value="Narayan" />
+        <property name="empId" value="2" />
+    </bean>
+
+    <!-- constructor tag is used to pass construct value -->
+    <bean id="depart1" class="com.infosys.beans.Department">
+        <constructor-arg name="deptName" value="Edgeverve"></constructor-arg>
+        <constructor-arg name="deptId" value="1" type="int"></constructor-arg>
+    </bean>
+
+    <bean id="project1" class="com.infosys.beans.Project">
+
+        <constructor-arg>
+            <list>
+             <!-- <value>Lucky</value>-->
+                <ref bean="emp" />
+                <ref bean="emp1" />
+            </list>
+        </constructor-arg>
+
+
+<!--        <constructor-arg>-->
+<!--            <ref bean="emp" />-->
+<!--        </constructor-arg>-->
+
+        <property name="projectName" value="Finacle" />
+        <property name="department">
+            <ref bean="depart1" />
+        </property>
+
+        <property name="resources">
+            <map>
+                <entry key="Laptops" value="5" value-type="int"></entry>
+                <entry key="Monitors" value="20" value-type="int"></entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>
